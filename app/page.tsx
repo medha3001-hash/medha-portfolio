@@ -83,7 +83,9 @@ export default function Home() {
   const [terminalMinimized, setTerminalMinimized] = useState(false);
   const [terminalFullScreen, setTerminalFullScreen] = useState(false);
   const [command, setCommand] = useState("");
-  const [history, setHistory] = useState([{ type: "output", text: "Welcome to Medha's portfolio!" }]);
+  const [history, setHistory] = useState<{ type: string; text: string | React.ReactNode }[]>([
+  { type: "output", text: "Welcome to Medha's portfolio!" }
+]);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
 
@@ -182,7 +184,7 @@ export default function Home() {
   const runCommand = (cmdStr: string) => {
     const cleanCmd = cmdStr.toLowerCase().trim();
     if (!cleanCmd) return;
-    let output = "";
+    let output: string | React.ReactNode = "";
     
     switch(cleanCmd) {
       case 'help':
@@ -198,7 +200,9 @@ export default function Home() {
   • clear         - Clear the terminal screen`;
         break;
       case 'about':
-        output = `👤 ABOUT ME\n════════════════════════════════════════════════════\nI am an Information Technology student (B.Tech '26) at GGSIPU, New Delhi, passionate about building intelligent systems and data-driven applications. From developing AI diet planners to analyzing market trends, I focus on writing efficient, scalable code.\n\n[ CORE SKILLS ]\n• Languages: Python, SQL\n• Technologies: Next.js, React, Node.js, PostgreSQL, IBM Cloud Pak\n• Specializations: Data Analytics, AI/ML Applications, Database Management`;
+        output = `👤 ABOUT ME\n════════════════════════════════════════════════════\nI’m a B.Tech IT student at Guru Gobind Singh Indraprastha University with interests in AI, data analytics, and software development. I have worked as a Data Analyst Intern at ARJ Securities, using Python and SQL to analyze market data, and I’m currently an AI/ML Research Intern at IIT Roorkee, working on machine learning and Digital Twin systems.
+
+I enjoy building practical tech solutions using Python, SQL, and web technologies, and my research on an AI-based diet planner (BiteBot) has been published in an international journal.\n\n[ CORE SKILLS ]\n• Languages: Python, SQL\n• Technologies: Next.js, React, Node.js, PostgreSQL, IBM Cloud Pak\n• Specializations: Data Analytics, AI/ML Applications, Database Management`;
         break;
       case 'internships':
         output = `💼 INTERNSHIP EXPERIENCE\n════════════════════════════════════════════════════\n\n2026 (Mar) — Present\n├─ 🟢 Research Intern (AI/ML) @ IIT Roorkee\n│  ├─ Contributing to the design of Digital Twin simulations for real-time monitoring.\n│  └─ Implementing advanced machine learning frameworks to optimize operational\n│     efficiency within the global power and energy sector.\n│\n2025 (Jul — Oct)\n└─ 🔵 Data Analyst Intern @ ARJ Securities\n   ├─ Developed Python/Pandas scripts to analyze market volatility and P/E trends.\n   ├─ Engineered complex SQL queries (Joins, CTEs) to aggregate consumer behavior data.\n   └─ Built data pipelines and Matplotlib visualizations for weekly investment briefs.`;
@@ -207,10 +211,10 @@ export default function Home() {
         output = `📂 PROJECTS DIRECTORY\n════════════════════════════════════════════════════\n\n[ SYSTEM NOTE: Directory currently under heavy compilation. ]\n[ Check back soon for BiteBot and Safe Max deployments.     ]`;
         break;
       case 'education':
-        output = `🎓 EDUCATIONAL BACKGROUND\n════════════════════════════════════════════════════\n\n2022 — 2026\n├─ 🟢 B.Tech in Information Technology\n│  ├─ Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi\n│  └─ Status: Pursuing\n│\n2022\n├─ 🔵 Class XII (CBSE)\n│  ├─ Bharti Public School, Mayur Vihar\n│  └─ Score: 84%\n│\n2020\n└─ 🔵 Class X (CBSE)\n   ├─ Bharti Public School, Mayur Vihar\n   └─ Score: 86.2%`;
+        output = `🎓 EDUCATIONAL BACKGROUND\n════════════════════════════════════════════════════\n\n2022 — 2026\n├─ 🟢 B.Tech in Information Technology\n│  ├─ Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi\n│  └─ Status: Pursuing\n│\n2022\n├─ 🔵 Class XII (CBSE)\n│  ├─ Bharti Public School, Mayur Vihar\n│  └─ Score: 84%\n│\n2020\n└─ 🔵 Class X (CBSE)\n   ├─ Bharti Public School, Mayur Vihar\n   └─ Score: 87%`;
         break;
       case 'achievements':
-        output = `🏆 COMPETITIONS & CERTIFICATIONS\n════════════════════════════════════════════════════\n\n┌ 🏅 Academic Excellence ───────────────────────────────┐\n│ • Published research paper "BiteBot: An AI-Diet     │\n│   Planner" in IJSREM (Nov 2025).                    │\n│ • Awarded "Best Project in SQL" out of 80 students  │\n│   for a School Management System.                   │\n│ • Received Certificates of Merit for Computer       │\n│   Science (Python, SQL) & English.                  │\n└───────────────────────────────────────────────────────┘\n\n┌ 📜 Certifications & Hackathons ───────────────────────┐\n│ • IBM Web Dev: Built e-commerce sites (July 2024)   │\n│ • IBM Cloud Pak: Liberty Developer Essentials       │\n│ • Selected for prestigious Inter-School Hackathon   │\n│ • 1st Place (out of 5,000): Meme Marketing, IIM     │\n└───────────────────────────────────────────────────────┘`;
+        output = `🏆 COMPETITIONS & CERTIFICATIONS\n════════════════════════════════════════════════════\n\n┌ 🏅 Academic Excellence ───────────────────────────────┐\n│ • Published research paper "BiteBot: An AI-Diet     │\n│   Planner" in IJSREM (Nov 2025).                    │\n│ • Awarded "Best Project in SQL" out of 80 students  │\n│   for a School Management System.                   │\n│ • Received Certificates of Merit for Computer       │\n│   Science (Python, SQL) & English.                  │\n└───────────────────────────────────────────────────────┘\n\n┌ 📜 Certifications & Hackathons ───────────────────────┐\n│ • IBM Web Dev: Built e-commerce sites (July 2024)   │\n│ • IBM Cloud Pak: Liberty Developer Essentials       │\n│ • Selected for prestigious Inter-School Hackathon   │\n│ • 1st Place (out of 5,000): Meme Marketing, IIM Trichy     │\n└───────────────────────────────────────────────────────┘`;
         break;
       case 'leadership':
         output = `👑 POSITIONS OF RESPONSIBILITY\n════════════════════════════════════════════════════\n\n• Head of Revenue @ Hoof-IT (2023-24)\n  Secured ₹80,000 in revenue through strategic marketing and partnerships.\n\n• Head Choreographer & Core Member @ Western Dance Society (2022-23)\n  Organized 24 competitions engaging 15,000+ participants. Managed social \n  media (100+ posts) and led volunteer logistics.\n\n• Event Organizer @ Utkarsh (2024)\n  Organized GGSIPU annual cultural events for 200+ attendees, coordinating \n  performances and managing ₹200,000 in sponsorships.`;
@@ -219,8 +223,23 @@ export default function Home() {
         output = `⚽ EXTRA-CURRICULAR ACTIVITIES\n════════════════════════════════════════════════════\n\n• Sports: \n  - Vice Captain of the College Football Team (2025).\n  - Won Bronze (100m sprint) & Silver (4x200m relay) at East Delhi Zonals.\n  - Semi-Finalist in Basketball at East Delhi Zonals (2018).\n\n• Hobbies:\n  - Trained Bharatanatyam dancer (3-year diploma from Kurukshetra University).\n  - Passionate about both classical and western dance.`;
         break;
       case 'contact':
-        output = `📫 CONTACT INFORMATION\n════════════════════════════════════════════════════\n\n• Email:    medha3001@gmail.com\n• Phone:    +91 7011976179\n• Location: GGSIPU, New Delhi\n• LinkedIn: linkedin.com/in/medha\n• GitHub:   github.com/medha`;
-        break;
+        output = (
+        <div className="flex flex-col">
+          <span>📬 CONTACT INFORMATION</span>
+          <span>=================================================================================</span>
+          <br />
+          <span>• Email:    medha3001@gmail.com</span>
+          <span>• Phone:    +91 7011976179</span>
+          <span>• Location: GGSIPU, New Delhi</span>
+          <span>
+            • LinkedIn: <a href="https://www.linkedin.com/in/medha-bhardwaj-137671180" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">linkedin.com/in/medha-bhardwaj</a>
+          </span>
+          <span>
+            • GitHub:   <a href="https://github.com/medha3001-hash" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">github.com/medha3001-hash</a>
+          </span>
+        </div>
+      );
+      break;
       case 'clear': 
         setHistory([]); setCommand(""); return;
       default: 
@@ -332,12 +351,12 @@ export default function Home() {
         }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "white", fontWeight: "800", fontSize: "15px" }}>
-              <Smile size={20} color="#fbbf24" /> Break Time!
+              <Smile size={20} color="#fbbf24" /> Take a Break!
             </div>
             <X size={18} color="#a1a1aa" style={{ cursor: "pointer" }} onClick={() => setShowBreakPopup(false)} />
           </div>
           <p style={{ color: "#d1d5db", fontSize: "14px", margin: 0, lineHeight: "1.5", fontWeight: "500" }}>
-            You've been viewing this portfolio for a while! Want to take a quick break and look at some memes?
+            You've been viewing this portfolio for a while! Want to take a quick break and look at some "The Office" memes to freshen up your mood?
           </p>
           <div style={{ display: "flex", gap: "10px", marginTop: "5px" }}>
             <button onClick={() => openApp('memes')} style={{ flex: 1, backgroundColor: "#fbbf24", color: "black", border: "none", borderRadius: "6px", padding: "10px", fontWeight: "800", cursor: "pointer" }}>
@@ -389,7 +408,7 @@ export default function Home() {
               <div onClick={() => setTerminalMinimized(true)} style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#ffbd2e", cursor: "pointer" }} />
               <div onClick={() => setTerminalFullScreen(!terminalFullScreen)} style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#27c93f", cursor: "pointer" }} />
             </div>
-            <div style={{ flex: 1, textAlign: "center", color: activeWindow === 'terminal' ? "white" : "#6b7280", fontSize: "14px", fontWeight: "700" }}>medha@portfolio : terminal</div>
+            <div style={{ flex: 1, textAlign: "center", color: activeWindow === 'terminal' ? "white" : "#6b7280", fontSize: "14px", fontWeight: "700" }}>medha@portfolio</div>
           </div>
           
           <div style={{ flex: 1, padding: "35px", overflowY: "auto", fontFamily: "monospace", fontSize: "16px", color: "#e5e7eb" }}>

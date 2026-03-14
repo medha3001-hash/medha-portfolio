@@ -1,0 +1,14 @@
+// --- THE OFFICE MEMES (GIFs & Static Images) ---
+const officeMemes = [
+  "https://media.giphy.com/media/1T96TRBBGYThC/giphy.gif", // Michael Scott "No"
+  "/The Office tv show.jpeg",                       // Pam "They're the same picture"
+  "/_ (3).jpeg", // Jim staring through blinds
+  "/_ (4).jpeg",                       // Prison Mike
+  "/_ (5).jpeg", // Parkour
+  "_ (6).jpeg",                       // Michael "Ready to get hurt again"
+  "https://media.giphy.com/media/dXFKDUolyLLi8gq6Cl/giphy.gif", // Dwight "True"
+  "/- Michael Scott.jpeg",                        // Kelly "First of all, how dare you"
+  "/boom_ roasted.jpeg",
+  "/Michael Scott is fav.jpeg",
+  "/The almighty Dwight Kurt SCHRUTE!!!!!!!!!.jpeg"
+];
