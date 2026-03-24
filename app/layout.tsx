@@ -1,7 +1,7 @@
 import "./globals.css"; // Crucial for Tailwind to work
 
 export const metadata = {
-  title: 'Terminal OS',
+  title: 'Medha Bhardwaj',
   description: 'Interactive OS Portfolio',
 }
 
