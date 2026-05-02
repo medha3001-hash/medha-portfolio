@@ -295,7 +295,53 @@ export default function Home() {
         output = `💼 INTERNSHIP EXPERIENCE\n════════════════════════════════════════════════════\n\n2026 (Mar) — Present\n├─ 🟢 Research Intern (AI/ML) @ IIT Roorkee\n│  ├─ Contributing to the design of Digital Twin simulations for real-time monitoring.\n│  └─ Implementing advanced machine learning frameworks to optimize operational\n│     efficiency within the global power and energy sector.\n│\n2025 (Jul — Oct)\n└─ 🔵 Data Analyst Intern @ ARJ Securities\n   ├─ Developed Python/Pandas scripts to analyze market volatility and P/E trends.\n   ├─ Engineered complex SQL queries (Joins, CTEs) to aggregate consumer behavior data.\n   └─ Built data pipelines and Matplotlib visualizations for weekly investment briefs.`;
         break;
       case "projects":
-        output = `📂 PROJECTS DIRECTORY\n════════════════════════════════════════════════════\n\n[ SYSTEM NOTE: Directory currently under heavy compilation. ]\n[ Check back soon for BiteBot and Safe Max deployments.     ]`;
+        output = `
+        📁 PROJECTS DIRECTORY
+        ══════════════════════════════════════════════
+
+        [1] 🚦 SMART TRAFFIC DIGITAL TWIN
+        ──────────────────────────────────────────────
+        ↳ ML-powered traffic signal optimization system
+
+        • Random Forest model (77.7% accuracy, +37% improvement)
+        • Real Delhi dataset (48,120 records, 4 junctions)
+        • Dynamic signal timing based on congestion
+        • Connected junction simulation (spillover effect)
+        • Live dashboard (Streamlit)
+
+        ▶ Tech: Python, Scikit-learn, Streamlit  
+        🔗 Demo: smart-traffic-digital-twin.streamlit.app
+
+        ══════════════════════════════════════════════
+
+        [2] 🚨 NETWORK TRAFFIC ANALYZER (DPI)
+        ──────────────────────────────────────────────
+        ↳ Real-time packet analysis using Deep Packet Inspection
+
+        • Live packet capture using Scapy
+        • Extracts IP, protocol, and payload data
+        • Real-time dashboard visualization
+        • Basic anomaly detection system
+        • Full pipeline: Capture → Process → Log → Visualize
+
+        ▶ Tech: Python, Scapy, Streamlit  
+
+        ══════════════════════════════════════════════
+
+        [3] 🚀 MEDH.AI — VECTOR SEARCH ENGINE
+        ──────────────────────────────────────────────
+        ↳ Full-stack semantic search engine from scratch
+
+        • Custom vector database implementation
+        • HNSW, KD-Tree, Brute Force algorithms
+        • Multiple distance metrics (Cosine, Euclidean)
+        • FastAPI backend with REST APIs
+        • Optional RAG pipeline with LLM
+
+        ▶ Tech: Python, FastAPI, NumPy  
+
+        ══════════════════════════════════════════════
+        `;
         break;
       case "education":
         output = `🎓 EDUCATIONAL BACKGROUND\n════════════════════════════════════════════════════\n\n2022 — 2026\n├─ 🟢 B.Tech in Information Technology\n│  ├─ Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi\n│  └─ Status: Pursuing\n│\n2022\n├─ 🔵 Class XII (CBSE)\n│  ├─ Bharti Public School, Mayur Vihar\n│  └─ Score: 84%\n│\n2020\n└─ 🔵 Class X (CBSE)\n   ├─ Bharti Public School, Mayur Vihar\n   └─ Score: 87%`;
