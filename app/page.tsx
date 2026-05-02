@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { User, Terminal as TerminalIcon, LayoutGrid, LogOut, Wifi, Battery, Smile, X, Timer, BookOpen, Eye } from "lucide-react";
-import Greeting from "@/components/Greeting";
-import ViewCounter from "@/components/ViewCounter";
+import Greeting from "@/components/greetings";
+import ViewCounter from "@/components/viewcounter";
+import { Eye } from "lucide-react";
 
 // --- MATRIX RAIN BACKGROUND ---
 function MatrixRain() {
