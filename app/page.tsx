@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { User, Terminal as TerminalIcon, LayoutGrid, LogOut, Wifi, Battery, Smile, X, Timer, BookOpen, Eye } from "lucide-react";
-
+import Greeting from "@/components/Greeting";
+import ViewCounter from "@/components/ViewCounter";
 
 // --- MATRIX RAIN BACKGROUND ---
 function MatrixRain() {
@@ -340,8 +341,7 @@ export default function Home() {
 
         ▶ Tech: Python, FastAPI, NumPy  
 
-        ══════════════════════════════════════════════
-        `;
+        ══════════════════════════════════════════════`;
         break;
       case "education":
         output = `🎓 EDUCATIONAL BACKGROUND\n════════════════════════════════════════════════════\n\n2022 — 2026\n├─ 🟢 B.Tech in Information Technology\n│  ├─ Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi\n│  └─ Status: Pursuing\n│\n2022\n├─ 🔵 Class XII (CBSE)\n│  ├─ Bharti Public School, Mayur Vihar\n│  └─ Score: 84%\n│\n2020\n└─ 🔵 Class X (CBSE)\n   ├─ Bharti Public School, Mayur Vihar\n   └─ Score: 87%`;
@@ -623,7 +623,7 @@ export default function Home() {
             }}
           >
             <Eye size={14} />
-            <span>{views !== null ? `${views} views` : "—"}</span>
+            <ViewCounter />
           </div>
         </div>
 
