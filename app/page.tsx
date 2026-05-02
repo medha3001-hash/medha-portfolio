@@ -183,9 +183,10 @@ export default function Home() {
           .toUpperCase()
       );
       const hour = now.getHours();
-      if (hour < 12) setGreeting("Good Morning");
-      else if (hour < 18) setGreeting("Good Afternoon");
-      else setGreeting("Good Evening");
+      if (hour < 5) setGreeting("Good Evening");       // 12 AM to 4:59 AM
+      else if (hour < 12) setGreeting("Good Morning"); // 5 AM to 11:59 AM
+      else if (hour < 18) setGreeting("Good Afternoon"); // 12 PM to 5:59 PM
+      else setGreeting("Good Evening");              // 6 PM to 11:59 PM
     };
     update();
     const id = setInterval(update, 1000);
