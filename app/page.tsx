@@ -33,35 +33,6 @@ function MatrixRain() {
     };
     const interval = setInterval(draw, 50);
     return () => clearInterval(interval);
-    setHistory([
-
-      "root@medha $ help",
-
-      "",
-
-      "Available commands:",
-
-      "• about        - About me and my skills",
-
-      "• internships  - Internship experience",
-
-      "• projects     - My projects",
-
-      "• education    - Educational background",
-
-      "• achievements - Competitions and certifications",
-
-      "• leadership   - My positions and responsibilities",
-
-      "• activities   - Extra-curricular activities",
-
-      "• contact      - Contact information",
-
-      "• clear        - Clear the terminal screen",
-
-      "",
-
-    ]);
   }, []);
   return (
     <canvas
@@ -178,6 +149,8 @@ export default function Home() {
   const [command, setCommand] = useState("");
   const [history, setHistory] = useState<{ type: string; text: string | React.ReactNode }[]>([
     { type: "output", text: "Welcome to Medha's portfolio!" },
+    { type: "input", text: "root@medha portfolio % help" },
+    { type: "output", text: `Available commands:\n  • about         - About me and my skills\n  • internships   - Internship experience\n  • projects      - My projects\n  • education     - Educational background\n  • achievements  - Competitions and certifications\n  • leadership    - My positions and responsibilities\n  • activities    - Extra-curricular activities\n  • contact       - Contact information\n  • clear         - Clear the terminal screen` },
   ]);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
