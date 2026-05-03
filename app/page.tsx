@@ -350,7 +350,7 @@ export default function Home() {
         output = `🎓 EDUCATIONAL BACKGROUND\n════════════════════════════════════════════════════\n\n2022 — 2026\n├─ 🟢 B.Tech in Information Technology\n│  ├─ Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi\n│  └─ Status: Pursuing\n│\n2022\n├─ 🔵 Class XII (CBSE)\n│  ├─ Bharti Public School, Mayur Vihar\n│  └─ Score: 84%\n│\n2020\n└─ 🔵 Class X (CBSE)\n   ├─ Bharti Public School, Mayur Vihar\n   └─ Score: 87%`;
         break;
       case "achievements":
-        output = `🏆 COMPETITIONS & CERTIFICATIONS\n════════════════════════════════════════════════════\n\n┌ 🏅 Academic Excellence ───────────────────────────────┐\n│ • Published research paper "BiteBot: An AI-Diet     │\n│   Planner" in IJSREM (Nov 2025).                    │\n│ • Awarded "Best Project in SQL" out of 80 students  │\n│   for a School Management System.                   │\n│ • Received Certificates of Merit for Computer       │\n│   Science (Python, SQL) & English.                  │\n└───────────────────────────────────────────────────────┘\n\n┌ 📜 Certifications & Hackathons ───────────────────────┐\n│ • IBM Web Dev: Built e-commerce sites (July 2024)   │\n│ • IBM Cloud Pak: Liberty Developer Essentials       │\n│ • Selected for prestigious Inter-School Hackathon   │\n│ • 1st Place (out of 5,000): Meme Marketing, IIM Trichy     │\n└───────────────────────────────────────────────────────┘`;
+        output = `🏆 COMPETITIONS & CERTIFICATIONS\n════════════════════════════════════════════════════\n\n┌ 🏅 Academic Excellence ───────────────────────────────┐\n│ • Published research paper "BiteBot: An AI-Diet     │\n│   Planner" in IJSREM (Nov 2025).                    │\n│ • Awarded "Best Project in SQL" out of 80 students  │\n│   for a School Management System.                   │\n│ • Received Certificates of Merit for Computer       │\n│   Science (Python, SQL) & English.                  │\n└───────────────────────────────────────────────────────┘\n\n┌ 📜 Certifications & Hackathons ───────────────────────┐\n│ • IBM Web Dev: Built e-commerce sites (July 2024)   │\n│ • IBM Cloud Pak: Liberty Developer Essentials       │\n│ • Selected for prestigious Inter-School Hackathon   │\n│ • 1st Place (out of 5,000): Meme Marketing, IIM     │\n└───────────────────────────────────────────────────────┘`;
         break;
       case "leadership":
         output = `👑 POSITIONS OF RESPONSIBILITY\n════════════════════════════════════════════════════\n\n• Head of Revenue @ Hoof-IT (2023-24)\n  Secured ₹80,000 in revenue through strategic marketing and partnerships.\n\n• Head Choreographer & Core Member @ Western Dance Society (2022-23)\n  Organized 24 competitions engaging 15,000+ participants. Managed social \n  media (100+ posts) and led volunteer logistics.\n\n• Event Organizer @ Utkarsh (2024)\n  Organized GGSIPU annual cultural events for 200+ attendees, coordinating \n  performances and managing ₹200,000 in sponsorships.`;
@@ -449,7 +449,7 @@ export default function Home() {
           {/* 1. GREETING */}
           <div style={{ marginBottom: "18px", fontSize: "20px", fontWeight: "700" }}>
             <span style={{ color: "#34d399", fontFamily: "monospace", letterSpacing: "1px" }}>
-              {greeting}, welcome to my portfolio.
+              {greeting}, Welcome To My Portfolio!!
             </span>
           </div>
 

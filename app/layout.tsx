@@ -2,7 +2,7 @@ import "./globals.css"; // Crucial for Tailwind to work
 
 export const metadata = {
   title: 'Medha Bhardwaj',
-  description: 'Interactive OS Portfolio',
+  description: 'Portfolio of Medha Bhardwaj',
 }
 
 export default function RootLayout({
