@@ -1,26 +1,13 @@
 import { NextResponse } from "next/server";
+import Redis from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL!);
 
 export async function GET() {
   try {
-    const redisUrl = process.env.REDIS_URL;
-    if (!redisUrl) return NextResponse.json({ views: 0 });
-
-    // Parse redis://default:PASSWORD@HOSTNAME:PORT
-    const url = new URL(redisUrl);
-    const password = url.password;
-    const hostname = url.hostname;
-
-    const res = await fetch(`https://${hostname}/incr/portfolio_views`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${password}`,
-      },
-      cache: "no-store",
-    });
-
-    const data = await res.json();
-    return NextResponse.json({ views: data.result ?? 0 });
-  } catch (e) {
+    const views = await redis.incr("portfolio_views");
+    return NextResponse.json({ views });
+  } catch {
     return NextResponse.json({ views: 0 });
   }
 }
