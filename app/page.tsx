@@ -33,6 +33,35 @@ function MatrixRain() {
     };
     const interval = setInterval(draw, 50);
     return () => clearInterval(interval);
+    setHistory([
+
+      "root@medha $ help",
+
+      "",
+
+      "Available commands:",
+
+      "• about        - About me and my skills",
+
+      "• internships  - Internship experience",
+
+      "• projects     - My projects",
+
+      "• education    - Educational background",
+
+      "• achievements - Competitions and certifications",
+
+      "• leadership   - My positions and responsibilities",
+
+      "• activities   - Extra-curricular activities",
+
+      "• contact      - Contact information",
+
+      "• clear        - Clear the terminal screen",
+
+      "",
+
+    ]);
   }, []);
   return (
     <canvas
